@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SchoolsListFragment">
+
+    <fragment
+        android:id="@+id/SchoolsListFragment"
+        android:name="com.dushane.nycschools2.ui.SchoolsListFragment"
+        android:label="@string/schools_list_fragment_label"
+        tools:layout="@layout/fragment_school_list">
+
+        <action
+            android:id="@+id/navigateToSATScoresListFragment"
+            app:destination="@id/SATScoresListFrgment" />
+    </fragment>
+    <fragment
+        android:name="com.dushane.nycschools2.ui.SATScoresListFragment"
+        android:id="@+id/SATScoresListFrgment"
+        android:label="@string/sat_scores_list_fragment_label"
+        tools:layout="@layout/fragment_sat_scores_list">
+
+        <action
+            android:id="@+id/navigateToSchoolListFragment"
+            app:destination="@id/SchoolsListFragment" />
+    </fragment>
+</navigation>

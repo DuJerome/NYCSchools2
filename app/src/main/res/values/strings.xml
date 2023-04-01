@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NYCSchools2</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="schools_list_fragment_label">Schools List Fragment</string>
+    <string name="sat_scores_list_fragment_label">SAT Scores List Fragment</string>
+    <string name="placeholder">placeholder</string>
+</resources>
