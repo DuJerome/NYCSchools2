@@ -9,7 +9,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SchoolViewModel @Inject constructor(
-    schoolRepository: SchoolRepository
+    private val schoolRepository: SchoolRepository
 ) : ViewModel() {
+
     val schools: Single<MutableList<School>> = schoolRepository.getSchool()
 }
