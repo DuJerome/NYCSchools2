@@ -2,7 +2,7 @@ package com.dushane.nycschools2.model
 
 import java.io.Serializable
 
-class School(
+data class School(
     @Transient
     val dbn: String?,
     val school_name: String?,
@@ -118,4 +118,4 @@ class School(
     @Transient
     val nta: String?,
     val borough: String?,
-): Serializable
+)
