@@ -1,9 +1,7 @@
 package com.dushane.nycschools2.model
 
-import com.squareup.moshi.JsonClass
-
-@JsonClass(generateAdapter = true)
-data class SATScores(
+class SATScores(
+    @Transient
     val dbn: String,
     val school_name: String,
     val num_of_sat_test_takers: String,

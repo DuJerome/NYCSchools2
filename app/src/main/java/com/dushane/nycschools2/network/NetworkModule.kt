@@ -1,8 +1,6 @@
 package com.dushane.nycschools2.network
 
-import com.dushane.nycschools2.model.School
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,7 +9,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Modifier
 import javax.inject.Singleton
 
 @Module
@@ -36,27 +35,25 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideMoshi(): Moshi {
-        val moshi =  Moshi.Builder().build()
-        val listSchoolType = Types.newParameterizedType(MutableList::class.java, School::class.java)
-        moshi.adapter<MutableList<School>>(listSchoolType)
-        return moshi
+    fun providesGSON(): Gson {
+        return Gson().newBuilder()
+            .excludeFieldsWithModifiers(Modifier.TRANSIENT)
+            .create()
     }
 
     @Singleton
     @Provides
     fun provideBaseUrl(): String {
-        return "https://data.cityofnewyork.us/resource/"
+        return "https://data.cityofnewyork.us"
     }
 
     @Singleton
     @Provides
     fun provideRetrofit(
-        moshi: Moshi,
         baseUrl: String
     ): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .baseUrl(baseUrl)
             .build()

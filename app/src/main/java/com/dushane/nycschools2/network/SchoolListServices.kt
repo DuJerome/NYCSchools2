@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface SchoolListServices {
 
-    @GET("s3k6-pzi2.json")
+    @GET("/resource/s3k6-pzi2.json")
     fun getSchoolList(): Single<MutableList<School>>
 }
