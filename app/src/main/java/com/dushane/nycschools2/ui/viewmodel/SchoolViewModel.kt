@@ -6,6 +6,7 @@ import com.dushane.nycschools2.repository.SchoolRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
+import retrofit2.Call
 import javax.inject.Inject
 
 @HiltViewModel
@@ -13,5 +14,5 @@ class SchoolViewModel @Inject constructor(
     private val schoolRepository: SchoolRepository
 ) : ViewModel() {
 
-    val schools: Flowable<MutableList<School>> = schoolRepository.getSchool()
+    val schools: Single<List<School>> = schoolRepository.getSchool()
 }

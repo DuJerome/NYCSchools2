@@ -5,4 +5,6 @@
     <string name="schools_list_fragment_label">Schools List Fragment</string>
     <string name="sat_scores_list_fragment_label">SAT Scores List Fragment</string>
     <string name="placeholder">placeholder</string>
+    <string name="title_school_list">Schools</string>
+    <string name="title_sat_list">SATS</string>
 </resources>

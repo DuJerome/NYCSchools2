@@ -43,7 +43,7 @@ class SchoolListRecyclerViewAdapter constructor(
             }
 
             override fun areContentsTheSame(oldItem: School, newItem: School): Boolean {
-                return oldItem == newItem
+                return oldItem.school_name == newItem.school_name
             }
         }
     }
