@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.dushane.nycschools2.ui.viewmodel.SchoolViewModel
 import com.dushane.nycschools2.R
+import com.dushane.nycschools2.ui.viewmodel.SchoolViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -17,7 +17,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 @AndroidEntryPoint
 class SchoolsListFragment(): Fragment(R.layout.fragment_school_list) {
 
-    private val schoolViewModel: SchoolViewModel by viewModels<SchoolViewModel>()
+    private val schoolViewModel: SchoolViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
