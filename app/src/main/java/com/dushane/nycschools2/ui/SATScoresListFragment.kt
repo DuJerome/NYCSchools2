@@ -2,9 +2,7 @@ package com.dushane.nycschools2.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.paging.PagingData
@@ -23,14 +21,6 @@ import kotlinx.android.synthetic.main.fragment_sat_scores_list.*
 class SATScoresListFragment : Fragment() {
 
     private val satViewModel:SATScoresViewModel by viewModels()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        return view
-    }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
