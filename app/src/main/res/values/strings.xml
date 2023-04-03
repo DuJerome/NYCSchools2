@@ -9,4 +9,7 @@
     <string name="title_sat_list">SATS</string>
     <string name="header_sat_list">NYC SAT SCORES</string>
     <string name="header_schools_list">NYC SCHOOLS</string>
+    <string name="label_extra">Extracurricular Activities:</string>
+    <string name="label_total_students">Total Students:</string>
+    <string name="close">close</string>
 </resources>

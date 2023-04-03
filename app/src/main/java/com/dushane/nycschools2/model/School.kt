@@ -1,9 +1,6 @@
 package com.dushane.nycschools2.model
 
-import java.io.Serializable
-
 data class School(
-    @Transient
     val dbn: String?,
     val school_name: String?,
     @Transient
@@ -35,9 +32,7 @@ data class School(
     @Transient
     val finalgrades: String?,
     val total_students: String?,
-    @Transient
     val extracurricular_activities: String?,
-    @Transient
     val school_sports: String?,
     @Transient
     val attendance_rate: String?,

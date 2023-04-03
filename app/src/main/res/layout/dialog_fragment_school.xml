@@ -1,0 +1,162 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="375dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="25dp"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/schoolName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:text="@string/placeholder"
+            android:layout_marginTop="26dp"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/borough"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/overviewParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:layout_margin="8dp"
+            android:textSize="14sp"
+            android:padding="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/schoolName" />
+
+        <TextView
+            android:id="@+id/labelTotalStudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/label_total_students"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overviewParagraph" />
+
+        <TextView
+            android:id="@+id/totalStudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/labelTotalStudents"
+            app:layout_constraintTop_toBottomOf="@+id/overviewParagraph" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:maxWidth="200dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalStudents" />
+
+        <TextView
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <TextView
+            android:id="@+id/labelPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="9dp"
+            android:text="Phone:"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/website" />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/labelPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@id/website" />
+
+        <TextView
+            android:id="@+id/labelFaxNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Fax:"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelPhoneNumber" />
+
+        <TextView
+            android:id="@+id/faxNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/labelFaxNumber"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumber" />
+
+        <TextView
+            android:id="@+id/labelExtracurricular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/label_extra"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelFaxNumber" />
+
+        <TextView
+            android:id="@+id/extracurricular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/placeholder"
+            android:textSize="14sp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelExtracurricular" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/close"
+            app:layout_constraintTop_toBottomOf="@id/extracurricular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

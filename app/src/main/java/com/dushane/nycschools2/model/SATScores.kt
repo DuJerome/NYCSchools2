@@ -1,7 +1,6 @@
 package com.dushane.nycschools2.model
 
 class SATScores(
-    @Transient
     val dbn: String,
     val school_name: String,
     val num_of_sat_test_takers: String,
