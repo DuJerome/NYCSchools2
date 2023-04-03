@@ -12,7 +12,7 @@ import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.whenever
 
 @RunWith(MockitoJUnitRunner::class)
-class ViewModelUnitTest {
+class SchoolsViewModelUnitTest {
 
     var schoolViewModelMock = Mockito.mock(SchoolViewModel::class.java)
 
