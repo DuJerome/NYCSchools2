@@ -1,17 +1,28 @@
 package com.dushane.nycschools2.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.paging.PagingData
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.dushane.nycschools2.model.SATScores
+import com.dushane.nycschools2.ui.adapter.SATScoreListRecyclerViewAdapter
+import com.dushane.nycschools2.ui.viewmodel.SATScoresViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_sat_scores_list.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 @AndroidEntryPoint
 class SATScoresListFragment : Fragment() {
+
+    private val satViewModel:SATScoresViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,7 +32,15 @@ class SATScoresListFragment : Fragment() {
         return view
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recyclerViewSATScoresList.layoutManager = LinearLayoutManager(context)
+        val adapter = SATScoreListRecyclerViewAdapter(context)
+        recyclerViewSATScoresList.adapter = adapter
+        adapter.submitData(lifecycle, PagingData.from(getList()))
+        adapter.notifyDataSetChanged()
     }
+
+    private fun getList(): List<SATScores> = satViewModel.satScores.subscribeOn(Schedulers.single()).blockingGet()
 }

@@ -1,4 +1,4 @@
-package com.dushane.nycschools2.ui
+package com.dushane.nycschools2.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
