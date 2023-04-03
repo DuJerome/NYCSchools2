@@ -7,4 +7,6 @@
     <string name="placeholder">placeholder</string>
     <string name="title_school_list">Schools</string>
     <string name="title_sat_list">SATS</string>
+    <string name="header_sat_list">NYC SAT SCORES</string>
+    <string name="header_schools_list">NYC SCHOOLS</string>
 </resources>

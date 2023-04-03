@@ -4,12 +4,12 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.dushane.nycschools2.ui.SATScoresListFragment
 import com.dushane.nycschools2.ui.SchoolsListFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : FragmentActivity() {
-    private lateinit var navView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,9 +18,8 @@ class MainActivity : FragmentActivity() {
             .add(R.id.fragmentContainer, SchoolsListFragment())
             .commitNow()
 
-        navView = findViewById(R.id.nav_view)
-        navView.setOnItemSelectedListener {
-            if (it.itemId == R.id.navigation_schools){
+        nav_view.setOnItemSelectedListener {
+            if (it.title == resources.getString(R.string.title_school_list)){
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, SchoolsListFragment())
                     .commitNow()

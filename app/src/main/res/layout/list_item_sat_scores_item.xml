@@ -22,11 +22,13 @@
                 android:id="@+id/schoolName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="250dp"
                 android:layout_margin="8dp"
                 android:text="@string/placeholder"
-                android:textSize="16sp"
+                android:textSize="15.5sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/labelReadingAvg"/>
 
             <TextView
                 android:id="@+id/labelNumberOfTakers"
@@ -53,10 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Reading AVG."
+                android:text="Reading AVG:"
                 android:textSize="14sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/schoolName" />
+                app:layout_constraintBottom_toTopOf="@id/readingAvg"/>
 
             <TextView
                 android:id="@+id/labelMathAvg"
@@ -64,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:textSize="14sp"
-                android:text="Math AVG."
+                android:text="Math AVG:"
                 app:layout_constraintBottom_toTopOf="@+id/mathAvg"
                 app:layout_constraintLeft_toRightOf="@id/labelReadingAvg"
                 app:layout_constraintRight_toLeftOf="@id/labelWritingAvg" />
@@ -74,10 +76,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_marginBottom="3dp"
+                android:text="Writing AVG:"
                 android:textSize="14sp"
-                android:text="Writing AVG."
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/numberOfTakers" />
+                app:layout_constraintBottom_toTopOf="@+id/writinAvg"
+                app:layout_constraintRight_toRightOf="parent"/>
 
             <TextView
                 android:id="@+id/readingAvg"
@@ -86,7 +89,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/placeholder"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/labelReadingAvg" />
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
                 android:id="@+id/mathAvg"
@@ -105,8 +108,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/placeholder"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/labelWritingAvg" />
+                app:layout_constraintRight_toRightOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

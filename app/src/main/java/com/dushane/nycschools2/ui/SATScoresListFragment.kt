@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dushane.nycschools2.R
 import com.dushane.nycschools2.model.SATScores
 import com.dushane.nycschools2.ui.adapter.SATScoreListRecyclerViewAdapter
 import com.dushane.nycschools2.ui.viewmodel.SATScoresViewModel
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_sat_scores_list.*
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 @AndroidEntryPoint
-class SATScoresListFragment : Fragment() {
+class SATScoresListFragment : Fragment(R.layout.fragment_sat_scores_list) {
 
     private val satViewModel:SATScoresViewModel by viewModels()
 
