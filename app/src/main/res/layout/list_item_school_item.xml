@@ -1,14 +1,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/off_white">
 
     <data>
 
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:elevation="15dp">
+        android:layout_margin="8dp"
+        android:elevation="25dp"
+        app:cardCornerRadius="12dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -18,6 +21,7 @@
                 android:id="@+id/schoolName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="250dp"
                 android:text="@string/placeholder"
                 android:layout_margin="8dp"
                 android:textSize="16sp"
@@ -30,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
                 android:layout_margin="8dp"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +52,7 @@
 
             <TextView
                 android:id="@+id/location"
+                android:maxWidth="200dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
@@ -62,19 +67,39 @@
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
                 android:layout_margin="8dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/overviewParagraph" />
+                app:layout_constraintTop_toBottomOf="@id/overviewParagraph"/>
 
+            <TextView
+                android:id="@+id/labelPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                app:layout_constraintRight_toLeftOf="@id/phoneNumber"
+                app:layout_constraintTop_toBottomOf="@id/website" />
             <TextView
                 android:id="@+id/phoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
                 android:layout_margin="8dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/website" />
+
+            <TextView
+                android:id="@+id/labelFaxNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fax:"
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                app:layout_constraintRight_toLeftOf="@id/faxNumber"
+                app:layout_constraintTop_toBottomOf="@id/phoneNumber"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
                 android:id="@+id/faxNumber"
@@ -82,10 +107,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
                 android:layout_margin="8dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/phoneNumber"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

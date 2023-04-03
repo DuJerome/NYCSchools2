@@ -22,14 +22,12 @@ class MainActivity : FragmentActivity() {
         navView.setOnItemSelectedListener {
             if (it.itemId == R.id.navigation_schools){
                 supportFragmentManager.beginTransaction()
-                    .remove(SATScoresListFragment())
-                    .add(R.id.fragmentContainer, SchoolsListFragment())
+                    .replace(R.id.fragmentContainer, SchoolsListFragment())
                     .commitNow()
                 return@setOnItemSelectedListener true
             }else{
                 supportFragmentManager.beginTransaction()
-                    .remove(SchoolsListFragment())
-                    .add(R.id.fragmentContainer, SATScoresListFragment())
+                    .replace(R.id.fragmentContainer, SATScoresListFragment())
                     .commitNow()
                 return@setOnItemSelectedListener true
             }
