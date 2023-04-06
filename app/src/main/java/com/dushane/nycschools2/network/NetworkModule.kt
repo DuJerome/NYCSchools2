@@ -44,7 +44,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideBaseUrl(): String {
-        return "https://data.cityofnewyork.us"
+        return "https://data.cityofnewyork.us/"
     }
 
     @Singleton

@@ -30,8 +30,9 @@ class SATScoresListFragment : Fragment(R.layout.fragment_sat_scores_list) {
         val adapter = SATScoreListRecyclerViewAdapter(context)
         recyclerViewSATScoresList.adapter = adapter
         adapter.submitData(lifecycle, PagingData.from(getList()))
-        adapter.notifyDataSetChanged()
     }
 
-    private fun getList(): List<SATScores> = satViewModel.satScores.subscribeOn(Schedulers.single()).blockingGet()
+    private fun getList(): List<SATScores> =
+        satViewModel.satScores.subscribeOn(Schedulers.single())
+            .blockingGet().sortedBy { it.school_name }
 }

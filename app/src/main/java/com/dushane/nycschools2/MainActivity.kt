@@ -15,21 +15,34 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainer, SchoolsListFragment())
-            .commitNow()
+            .replace(R.id.fragmentContainer, SchoolsListFragment())
+            .commit()
 
-        nav_view.setOnItemSelectedListener {
-            if (it.title == resources.getString(R.string.title_school_list)){
+        nav_view.setOnNavigationItemSelectedListener {
+            if (it.title == resources.getString(R.string.title_school_list) && nav_view.selectedItemId == R.id.navigation_sat_score){
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, SchoolsListFragment())
-                    .commitNow()
-                return@setOnItemSelectedListener true
-            }else{
+                    .commit()
+                return@setOnNavigationItemSelectedListener true
+            }else if(it.itemId == R.id.navigation_sat_score && nav_view.selectedItemId == R.id.navigation_schools){
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, SATScoresListFragment())
-                    .commitNow()
-                return@setOnItemSelectedListener true
-            }
+                    .commit()
+                return@setOnNavigationItemSelectedListener true
+            } else return@setOnNavigationItemSelectedListener true
+        }
+    }
+
+
+    override fun onBackPressed() {
+        if (nav_view.selectedItemId == R.id.navigation_sat_score){
+            nav_view.menu.getItem(0).isChecked = true
+            supportFragmentManager.beginTransaction()
+                .addToBackStack("")
+                .replace(R.id.fragmentContainer, SchoolsListFragment())
+                .commit()
+        }else if(nav_view.selectedItemId == R.id.navigation_schools){
+            finish()
         }
     }
 }

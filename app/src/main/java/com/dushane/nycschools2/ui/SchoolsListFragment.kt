@@ -32,9 +32,12 @@ class SchoolsListFragment: Fragment(R.layout.fragment_school_list) {
         val adapter = SchoolListRecyclerViewAdapter(context,parentFragmentManager, getSATList())
         recyclerViewSchoolList.adapter = adapter
         adapter.submitData(lifecycle, PagingData.from(getList()))
-        adapter.notifyDataSetChanged()
     }
 
-    private fun getList(): List<School> = schoolViewModel.schools.subscribeOn(Schedulers.single()).blockingGet()
-    private fun getSATList(): List<SATScores> = satScoreViewModel.satScores.subscribeOn(Schedulers.single()).blockingGet()
+    private fun getList(): List<School> =
+        schoolViewModel.schools.subscribeOn(Schedulers.single())
+            .blockingGet().sortedBy { it.school_name }
+    private fun getSATList(): List<SATScores> =
+        satScoreViewModel.satScores.subscribeOn(Schedulers.single())
+            .blockingGet().sortedBy { it.school_name }
 }
