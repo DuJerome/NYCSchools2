@@ -1,6 +1,5 @@
 package com.dushane.nycschools2.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,6 @@ import com.dushane.nycschools2.model.School
 import com.dushane.nycschools2.ui.dialog.SchoolFragmentDialog
 
 class SchoolListRecyclerViewAdapter constructor(
-    private val context: Context?,
     private val fragmentManager: FragmentManager,
     private val satScoresList: List<SATScores>
 ) : PagingDataAdapter<School, SchoolListRecyclerViewAdapter.ViewHolder>(COMPARATOR) {
@@ -27,7 +25,7 @@ class SchoolListRecyclerViewAdapter constructor(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(context).inflate(R.layout.list_item_school_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item_school_item, parent, false)
         return ViewHolder(view)
     }
 

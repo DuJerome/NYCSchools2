@@ -29,7 +29,7 @@ class SchoolsListFragment: Fragment(R.layout.fragment_school_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerViewSchoolList.layoutManager = LinearLayoutManager(context)
-        val adapter = SchoolListRecyclerViewAdapter(context,parentFragmentManager, getSATList())
+        val adapter = SchoolListRecyclerViewAdapter(parentFragmentManager, getSATList())
         recyclerViewSchoolList.adapter = adapter
         adapter.submitData(lifecycle, PagingData.from(getList()))
     }

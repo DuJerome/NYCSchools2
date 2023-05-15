@@ -1,6 +1,5 @@
 package com.dushane.nycschools2.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +11,7 @@ import com.dushane.nycschools2.R
 import com.dushane.nycschools2.databinding.ListItemSatScoresItemBinding
 import com.dushane.nycschools2.model.SATScores
 
-class SATScoreListRecyclerViewAdapter constructor(
-    private val context: Context?
-): PagingDataAdapter<SATScores, SATScoreListRecyclerViewAdapter.ViewHolder>(COMPARATOR) {
+class SATScoreListRecyclerViewAdapter : PagingDataAdapter<SATScores, SATScoreListRecyclerViewAdapter.ViewHolder>(COMPARATOR) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding: ListItemSatScoresItemBinding = DataBindingUtil.bind(view)!!
@@ -22,7 +19,7 @@ class SATScoreListRecyclerViewAdapter constructor(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(context).inflate(R.layout.list_item_sat_scores_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item_sat_scores_item, parent, false)
         return ViewHolder(view)
     }
 

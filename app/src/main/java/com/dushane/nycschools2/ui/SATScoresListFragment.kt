@@ -27,7 +27,7 @@ class SATScoresListFragment : Fragment(R.layout.fragment_sat_scores_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerViewSATScoresList.layoutManager = LinearLayoutManager(context)
-        val adapter = SATScoreListRecyclerViewAdapter(context)
+        val adapter = SATScoreListRecyclerViewAdapter()
         recyclerViewSATScoresList.adapter = adapter
         adapter.submitData(lifecycle, PagingData.from(getList()))
     }
